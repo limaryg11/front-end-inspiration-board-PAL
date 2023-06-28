@@ -3,12 +3,21 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import NewBoardForm from './components/NewBoardForm';
 import BoardList from './components/BoardList';
+import CardList from './components/CardList';
 
 function App() {
 
-  const [boards, setBoards] = useState([])
-
   const API = "https://inspiration-board-pal-backend.onrender.com/boards"
+
+  const [boards, setBoards] = useState([])
+  const [selectedBoard, setSelectedBoard] = useState({
+    title:'',
+    owner:'',
+    board_id: null
+  });
+
+  const selectBoard = (board) => {setSelectedBoard(board)};
+
 
   const getAllBoards = () => {
     axios
@@ -43,7 +52,7 @@ function App() {
       <NewBoardForm addBoard={postBoard} />
       <BoardList data={boards}/>
 
-    
+      {selectedBoard.board_id ? <CardList board={selectedBoard} /> : '' } 
     </div>
   );
 }

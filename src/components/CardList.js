@@ -1,24 +1,31 @@
 import React from 'react';
+import axios from 'axios';
+import {useState, useEffect} from 'react';
 
-const cardData = [
-    {
-    "id": 4,
-    "likes_count": 200,
-    "message": "P-A-L rocks!"
-    },
-    {
-    "id": 5,
-    "likes_count": 200,
-    "message": "P-A-L CRUSHING IT!!"
-    },
-    {
-    "id": 1,
-    "likes_count": 1000,
-    "message": "deplyed sucessed"
-    }
-    ]
 
-const CardList = () => {
+
+const CardList = (props) => {
+    const [cardData, setCardsData] = useState([]);
+    const API = "https://inspiration-board-pal-backend.onrender.com"
+    
+    const getAllBoards = () => {
+        axios
+        .get(`${API}/boards/${props.board.board_id}/cards`)
+        .then((result) => {
+            setCardsData(result.data);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+        };
+    
+    useEffect(() => {
+        getAllBoards();
+    }, [props.board]);
+
+    return (
+        <div>hello</div>
+    )
 
 }
 
