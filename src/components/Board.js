@@ -1,28 +1,18 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
-const boardData = [
-    {
-    "id": 1,
-    "owner": "PALs",
-    "title": "please wroks"
-    },
-    {
-    "id": 2,
-    "owner": "PALs1",
-    "title": "this is a new board1"
-    },
-    {
-    "id": 3,
-    "owner": "PALs2",
-    "title": "this is a new board2"
-    },
-    {
-    "id": 4,
-    "owner": "PALs3",
-    "title": "this is a new board3"
-    }
-    ]
-    
-const Board = () => {
+const Board = ({id, title, owner}) => {
+    return (
+        <div>
+            <h2>{title}</h2>
+            <h2>{owner}</h2>
+        </div>
+    )
+};
 
-}
+Board.propTypes = {
+    title:PropTypes.string.isRequired,
+    owner:PropTypes.string.isRequired
+};
+
+export default Board;

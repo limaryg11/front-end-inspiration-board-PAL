@@ -2,6 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import NewBoardForm from './components/NewBoardForm';
+import BoardList from './components/BoardList';
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
   return (
     <div className="App">
       <NewBoardForm addBoard={postBoard} />
+      <BoardList data={boards}/>
 
     
     </div>
