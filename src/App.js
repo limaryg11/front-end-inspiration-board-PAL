@@ -49,8 +49,20 @@ function App() {
 
   return (
     <div className="App">
-      <NewBoardForm addBoard={postBoard} />
-      <BoardList data={boards}/>
+      <h1>Inspiration Board</h1>
+      <section>
+        <BoardList data={boards} selectBoard={selectBoard} />
+      </section>
+
+      <section>
+        <h2>Selected Boards</h2>
+        <p>{selectedBoard.board_id ? `${selectedBoard.title} - ${selectedBoard.owner}` : 'Select a Board from the Board List!'}</p>
+        <p>{selectedBoard.title}-{selectedBoard.owner}</p>
+      </section>
+      <section>
+        <h2>Create A New Board</h2>
+        <NewBoardForm addBoard={postBoard} />
+      </section>
 
       {selectedBoard.board_id ? <CardList board={selectedBoard} /> : '' } 
     </div>

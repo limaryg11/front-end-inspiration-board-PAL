@@ -9,6 +9,7 @@ const BoardList = (props) => {
                 id={board.id}
                 title={board.title}
                 owner={board.owner}
+                selectBoard={props.selectBoard}
             />
         );
     });
@@ -27,7 +28,8 @@ BoardList.propTypes = {
             title:PropTypes.string.isRequired,
             owner:PropTypes.string.isRequired
         })
-    ).isRequired
+    ).isRequired,
+    selectBoard:PropTypes.func.isRequired
 };
 
 export default BoardList;
