@@ -11,9 +11,11 @@ function App() {
 
   const [boards, setBoards] = useState([])
   const [selectedBoard, setSelectedBoard] = useState({
-    title:'',
-    owner:'',
-    id: null
+    board:{
+      title:'',
+      owner:'',
+      id: null
+    }
   });
 
   const selectBoard = (id) => {
@@ -66,7 +68,7 @@ function App() {
 
       <section>
         <h2>Selected Boards</h2>
-        <p>{selectedBoard.id ? `${selectedBoard.title} - ${selectedBoard.owner}` : 'Select a Board from the Board List!'}</p>
+        <p>{selectedBoard.board.id ? `${selectedBoard.board.title} - ${selectedBoard.board.owner}` : 'Select a Board from the Board List!'}</p>
         {/* <p>{selectedBoard.board.title}-{selectedBoard.board.owner}</p> */}
       </section>
       <section>
