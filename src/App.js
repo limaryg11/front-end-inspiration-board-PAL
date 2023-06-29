@@ -13,14 +13,14 @@ function App() {
   const [selectedBoard, setSelectedBoard] = useState({
     title:'',
     owner:'',
-    board_id: null
+    id: null
   });
 
   const selectBoard = (id) => {
     axios.get(`${API}/${id}`)
     .then((result)=>{
-      const newBoard=boards.filter((board)=>board.id===id);
-      setSelectedBoard(newBoard);
+      console.log(result.data)
+      setSelectedBoard(result.data);
 
     })
     .catch((error)=>{
@@ -66,15 +66,16 @@ function App() {
 
       <section>
         <h2>Selected Boards</h2>
-        <p>{selectedBoard.board_id ? `${selectedBoard.title} - ${selectedBoard.owner}` : 'Select a Board from the Board List!'}</p>
-        {/* <p>{selectedBoard.title}-{selectedBoard.owner}</p> */}
+        <p>{selectedBoard.id ? `${selectedBoard.title} - ${selectedBoard.owner}` : 'Select a Board from the Board List!'}</p>
+        {/* <p>{selectedBoard.board.title}-{selectedBoard.board.owner}</p> */}
       </section>
       <section>
         <h2>Create A New Board</h2>
         <NewBoardForm addBoard={postBoard} />
       </section>
+      {/* <CardList board={selectedBoard} /> */}
 
-      {selectedBoard.board_id ? <CardList board={selectedBoard} /> : '' } 
+      {/* {selectedBoard.board_id ? <CardList board={selectedBoard} /> : '' }  */}
     </div>
   );
 }

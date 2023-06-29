@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+
 import {useState, useEffect} from 'react';
 
 
@@ -8,7 +9,7 @@ const CardList = (props) => {
     const [cardData, setCardsData] = useState([]);
     const API = "https://inspiration-board-pal-backend.onrender.com"
     
-    const getAllBoards = () => {
+    const getAllCards = () => {
         axios
         .get(`${API}/boards/${props.board.board_id}/cards`)
         .then((result) => {
@@ -20,7 +21,7 @@ const CardList = (props) => {
         };
     
     useEffect(() => {
-        getAllBoards();
+        getAllCards();
     }, [props.board]);
 
     return (

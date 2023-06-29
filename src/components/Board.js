@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const Board = ({id, title, owner, selectBoard, board}) => {
     return (
         <div onClick={()=>{
-            selectBoard(board)
+            selectBoard(id)
             console.log("Board has been click")
         }} > {title}
         </div>
