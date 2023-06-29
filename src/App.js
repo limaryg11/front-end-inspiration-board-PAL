@@ -16,7 +16,17 @@ function App() {
     board_id: null
   });
 
-  const selectBoard = (board) => {setSelectedBoard(board)};
+  const selectBoard = (id) => {
+    axios.get(`${API}/${id}`)
+    .then((result)=>{
+      const newBoard=boards.filter((board)=>board.id===id);
+      setSelectedBoard(newBoard);
+
+    })
+    .catch((error)=>{
+      console.log(error)
+    });
+  };
 
 
   const getAllBoards = () => {
@@ -57,7 +67,7 @@ function App() {
       <section>
         <h2>Selected Boards</h2>
         <p>{selectedBoard.board_id ? `${selectedBoard.title} - ${selectedBoard.owner}` : 'Select a Board from the Board List!'}</p>
-        <p>{selectedBoard.title}-{selectedBoard.owner}</p>
+        {/* <p>{selectedBoard.title}-{selectedBoard.owner}</p> */}
       </section>
       <section>
         <h2>Create A New Board</h2>
