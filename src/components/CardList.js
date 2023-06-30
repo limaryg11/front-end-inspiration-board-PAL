@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Card from './Card';
+import NewCardForm from './NewCardForm';
 
 import {useState, useEffect} from 'react';
 
@@ -9,6 +10,8 @@ import {useState, useEffect} from 'react';
 const CardList = (props) => {
     const [cardData, setCardData] = useState([]);
     const API = "https://inspiration-board-pal-backend.onrender.com/boards"
+
+    // const API = "http://127.0.0.1:5000/boards"
 
     
     useEffect(() => {
@@ -30,23 +33,23 @@ const CardList = (props) => {
     });
     
 
-    // const postCards = (newCardData) => {
-    //     axios
-    //     .post(`${API}/${props.board.id}/cards`, newCardData)
-    //     .then((result) => {
-    //         console.log(result.data);
-    //         axios.get(`${API}/${props.board.id}/cards`)
-    //         .then((result)=> {
-    //         setCardData(result.data.cards);
-    //         }).catch((error) => {
-    //             console.log('Error:', error);
-    //             alert('Couldn\'t get cards for this board.');
-    //     });
-    //     })
-    //     .catch((error) => {
-    //         console.log(error);
-    //     });
-    // };
+    const postCard = (newCardData) => {
+        axios
+        .post(`${API}/${props.board.id}/cards`, newCardData)
+        .then((result) => {
+            console.log(result.data);
+            axios.get(`${API}/${props.board.id}/cards`)
+            .then((result)=> {
+            setCardData(result.data.cards);
+            }).catch((error) => {
+                console.log('Error:', error);
+                alert('Couldn\'t get cards for this board.');
+        });
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    };
 
     return (<section>
     <section>
@@ -55,7 +58,7 @@ const CardList = (props) => {
         {showCards}
         </div>
     </section>
-    {/* <NewCardForm postNewCard={postNewCard}></NewCardForm> */}
+    <NewCardForm addCard={postCard}></NewCardForm>
     </section>);
 }
 

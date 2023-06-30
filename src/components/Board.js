@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-const Board = ({id, title, owner, selectBoard, board}) => {
+const Board = ({id, title, selectBoard}) => {
     return (
         <div onClick={()=>{
             selectBoard(id)
-            console.log("Board has been click")
+            console.log("Board has been clicked")
         }} > {title}
         </div>
     )
