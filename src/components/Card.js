@@ -7,7 +7,7 @@ const Card = (props) => {
         <ul>
         <li><p>{props.card.likes_count} 🩷</p></li>
         {/* <li><p onClick={() => props.plusOneCardItem(props.card)}>+1</p></li>
-        <li><p className='card-item__delete' onClick={() => props.deleteCardItem(props.card)}>Delete</p></li> */}
+        <li><p onClick={() => props.deleteCard(props.card)}>Delete</p></li> */}
         </ul>
     </div>);
 };
