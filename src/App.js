@@ -69,15 +69,11 @@ function App() {
       <section>
         <h2>Selected Boards</h2>
         <p>{selectedBoard.board.id ? `${selectedBoard.board.title} - ${selectedBoard.board.owner}` : 'Select a Board from the Board List!'}</p>
-        {/* <p>{selectedBoard.board.title}-{selectedBoard.board.owner}</p> */}
       </section>
       <section>
         <h2>Create A New Board</h2>
         <NewBoardForm addBoard={postBoard} />
       </section>{selectedBoard.board.id ? <CardList board={selectedBoard.board}></CardList> : '' }
-      {/* <p>{selectedBoard.board.id ? `${selectedCards}` : 'No cards in this board'}</p> */}
-
-      {/* {selectedBoard.board_id ? <CardList board={selectedBoard} /> : '' }  */}
     </div>
   );
 }

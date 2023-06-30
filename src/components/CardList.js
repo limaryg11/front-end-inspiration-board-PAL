@@ -25,6 +25,7 @@ const CardList = (props) => {
 
     const showCards = cardData.map((card) => {
         return (<Card
+            key={card.id}
             card={card}></Card>)
     });
     
