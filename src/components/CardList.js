@@ -11,23 +11,37 @@ const CardList = (props) => {
     
     const getAllCards = () => {
         axios
-        .get(`${API}/boards/${props.board.board_id}/cards`)
+        .get(`${API}/boards/${props.board.id}/cards`)
         .then((result) => {
+            console.log(result.data)
             setCardsData(result.data);
+            
         })
         .catch((error) => {
             console.log(error);
         });
         };
     
+    
     useEffect(() => {
         getAllCards();
-    }, [props.board]);
+    }, []);
+
+    const postCards = (newCardData) => {
+        axios
+        .post(API, newCardData)
+        .then((result) => {
+          console.log(result.data);
+          getAllCards();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      };
 
     return (
-        <div>hello</div>
-    )
-
+        <div>Cards for...{cardData}</div>
+    );
 }
 
 export default CardList;
