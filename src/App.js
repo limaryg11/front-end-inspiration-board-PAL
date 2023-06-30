@@ -17,34 +17,8 @@ function App() {
       id: null
     }
   });
-
-  // const [selectedCards, setSelectedCards] = useState([])
-
-  const selectBoard = (id) => {
-    axios.get(`${API}/${id}`)
-    .then((result)=>{
-      console.log(result.data)
-      setSelectedBoard(result.data);
-
-    })
-    .catch((error)=>{
-      console.log(error)
-    });
-  };
-
-  // const selectCards = (id) => {
-  //   axios.get(`${API}/${id}/cards`)
-  //   .then((result)=>{
-  //     console.log(result.data)
-  //     setSelectedCards(result.data.cards);
-
-  //   })
-  //   .catch((error)=>{
-  //     console.log(error)
-  //   });
-  // };
-
-
+  
+  
   const getAllBoards = () => {
     axios
     .get(API)
@@ -55,11 +29,11 @@ function App() {
       console.log(error);
     });
   };
-
+  
   useEffect(() => {
     getAllBoards();
   }, []);
-
+  
   const postBoard = (newBoardData) => {
     axios
     .post(API, newBoardData)
@@ -71,9 +45,20 @@ function App() {
       console.log(error);
     });
   };
+  
+  const selectBoard = (id) => {
+    axios.get(`${API}/${id}`)
+    .then((result)=>{
+      console.log(result.data)
+      setSelectedBoard(result.data);
 
-
-
+    })
+    .catch((error)=>{
+      console.log(error)
+    });
+  };
+  
+  
   return (
     <div className="App">
       <h1>Inspiration Board</h1>

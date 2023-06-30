@@ -7,65 +7,55 @@ import {useState, useEffect} from 'react';
 
 
 const CardList = (props) => {
-    const [cardData, setCardsData] = useState([]);
-    const API = "https://inspiration-board-pal-backend.onrender.com"
+    const [cardData, setCardData] = useState([]);
+    const API = "https://inspiration-board-pal-backend.onrender.com/boards"
 
-    useEffect(() => {
-        axios.get(`${API}/boards/${props.board.id}/cards`)
-        .then((response)=> {
-            console.log("getting cardds")
-            console.log(response.data.cards)
-          setCardsData(response.data.cards);
-        }).catch((error) => {
-          console.log('Error:', error);
-          alert('Couldn\'t get cards for this board.');
-        });
-      }, [props.board]);
-
-    //   const cardElements = cardData.map((card) => {
-    //     return (<Card
-    //         card={card}></Card>)
-    //   });
     
-    // const getAllCards = () => {
+    useEffect(() => {
+        axios.get(`${API}/${props.board.id}/cards`)
+        .then((result)=> {
+            console.log("getting cardds")
+            console.log(result.data.cards)
+            setCardData(result.data.cards);
+        }).catch((error) => {
+            console.log('Error:', error);
+            alert('Couldn\'t get cards for this board.');
+        });
+    }, [props.board]);
+
+    const showCards = cardData.map((card) => {
+        return (<Card
+            card={card}></Card>)
+    });
+    
+
+    // const postCards = (newCardData) => {
     //     axios
-    //     .get(`${API}/boards/${props.id}/cards`)
+    //     .post(`${API}/${props.board.id}/cards`, newCardData)
     //     .then((result) => {
-    //         console.log(result.data)
-    //         setCardsData(result.data);
-            
+    //         console.log(result.data);
+    //         axios.get(`${API}/${props.board.id}/cards`)
+    //         .then((result)=> {
+    //         setCardData(result.data.cards);
+    //         }).catch((error) => {
+    //             console.log('Error:', error);
+    //             alert('Couldn\'t get cards for this board.');
+    //     });
     //     })
     //     .catch((error) => {
     //         console.log(error);
     //     });
-    //     };
-    
-    
-    // useEffect(() => {
-    //     getAllCards();
-    // }, [props.board]);
+    // };
 
-    // const postCards = (newCardData) => {
-    //     axios
-    //     .post(API, newCardData)
-    //     .then((result) => {
-    //       console.log(result.data);
-    //       getAllCards();
-    //     })
-    //     .catch((error) => {
-    //       console.log(error);
-    //     });
-    //   };
-
-    return (<section className='cards__container'>
+    return (<section>
     <section>
-      <h2>Cards for {props.board.title}</h2>
-      <div className='card-items__container'> {props.board.cards}
-        {/* {cardElements} */}
-      </div>
+        <h2>Cards for {props.board.title}</h2>
+        <div> 
+        {showCards}
+        </div>
     </section>
     {/* <NewCardForm postNewCard={postNewCard}></NewCardForm> */}
-  </section>);
+    </section>);
 }
 
 export default CardList;
