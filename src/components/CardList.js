@@ -11,7 +11,7 @@ const CardList = (props) => {
     
     const getAllCards = () => {
         axios
-        .get(`${API}/boards/${props.board.id}/cards`)
+        .get(`${API}/boards/${props.id}/cards`)
         .then((result) => {
             console.log(result.data)
             setCardsData(result.data);
@@ -25,7 +25,7 @@ const CardList = (props) => {
     
     useEffect(() => {
         getAllCards();
-    }, []);
+    }, [props.board]);
 
     const postCards = (newCardData) => {
         axios
@@ -40,7 +40,7 @@ const CardList = (props) => {
       };
 
     return (
-        <div>Cards for...{cardData}</div>
+        <div>Cards for...{getAllCards}</div>
     );
 }
 

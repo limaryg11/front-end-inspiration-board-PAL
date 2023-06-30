@@ -75,8 +75,7 @@ function App() {
       <section>
         <h2>Create A New Board</h2>
         <NewBoardForm addBoard={postBoard} />
-      </section>
-      {/* <CardList board={selectedBoard} /> */}
+      </section>{selectedBoard.board.id ? <CardList board={selectedBoard.board}></CardList> : '' }
 
       {/* {selectedBoard.board_id ? <CardList board={selectedBoard} /> : '' }  */}
     </div>
