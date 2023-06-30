@@ -18,6 +18,8 @@ function App() {
     }
   });
 
+  // const [selectedCards, setSelectedCards] = useState([])
+
   const selectBoard = (id) => {
     axios.get(`${API}/${id}`)
     .then((result)=>{
@@ -29,6 +31,18 @@ function App() {
       console.log(error)
     });
   };
+
+  // const selectCards = (id) => {
+  //   axios.get(`${API}/${id}/cards`)
+  //   .then((result)=>{
+  //     console.log(result.data)
+  //     setSelectedCards(result.data.cards);
+
+  //   })
+  //   .catch((error)=>{
+  //     console.log(error)
+  //   });
+  // };
 
 
   const getAllBoards = () => {
@@ -76,6 +90,7 @@ function App() {
         <h2>Create A New Board</h2>
         <NewBoardForm addBoard={postBoard} />
       </section>{selectedBoard.board.id ? <CardList board={selectedBoard.board}></CardList> : '' }
+      {/* <p>{selectedBoard.board.id ? `${selectedCards}` : 'No cards in this board'}</p> */}
 
       {/* {selectedBoard.board_id ? <CardList board={selectedBoard} /> : '' }  */}
     </div>

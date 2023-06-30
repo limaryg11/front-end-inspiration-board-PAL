@@ -9,6 +9,7 @@ const BoardList = (props) => {
                 id={board.id}
                 title={board.title}
                 owner={board.owner}
+                cards={board.cards}
                 selectBoard={props.selectBoard}
             />
         );
