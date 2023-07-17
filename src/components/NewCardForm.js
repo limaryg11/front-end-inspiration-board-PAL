@@ -26,6 +26,8 @@ const NewCardForm = ({addCard}) => {
         <form onSubmit={handleSubmit}>
             <label htmlFor="message">Message</label>
             <input
+                maxLength={40}
+                required
                 type="text"
                 id="message"
                 name="message"

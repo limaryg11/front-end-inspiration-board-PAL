@@ -27,6 +27,7 @@ const NewBoardForm = ({addBoard}) => {
         <form onSubmit={handleSubmit}>
             <label htmlFor="title">Title</label>
             <input
+                required
                 type="text"
                 id="title"
                 name="title"
@@ -35,6 +36,7 @@ const NewBoardForm = ({addBoard}) => {
             />
             <label htmlFor="owner">Owner's Name</label>
             <input
+                required
                 type="text"
                 id="owner"
                 name="owner"
