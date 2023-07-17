@@ -10,6 +10,7 @@ import {useState, useEffect} from 'react';
 const CardList = (props) => {
     const [cardData, setCardData] = useState([]);
     const API = "https://inspiration-board-pal-backend.onrender.com/boards"
+    
 
     // const API = "http://127.0.0.1:5000/boards"
 
@@ -26,12 +27,31 @@ const CardList = (props) => {
         });
     }, [props.board]);
 
+
+    const deleteCard = (card) => {
+        axios
+            .delete(`https://inspiration-board-pal-backend.onrender.com/cards/${card.id}`)
+            .then((responses) => {
+                const newCardData = cardData.filter((currentCard) => {
+                    return currentCard.card_id !== card.card_id;
+                });
+                setCardData(newCardData);
+            })
+            .catch((error) => {
+                console.log('Error:', error);
+                alert('Delete was unsuccessful!');
+            });
+    };
+
+    
     const showCards = cardData.map((card) => {
         return (<Card
             key={card.id}
-            card={card}></Card>)
+            card={card}
+            deleteCard={deleteCard}>
+                </Card>)
     });
-    
+
 
     const postCard = (newCardData) => {
         axios
