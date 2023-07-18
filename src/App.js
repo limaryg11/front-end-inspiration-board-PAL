@@ -80,8 +80,8 @@ function App() {
           <section className='new-board-form_container'>
             <h2>Create A New Board</h2>
             <NewBoardForm addBoard={postBoard} />
+            </section>
           </section>{selectedBoard.board.id ? <CardList board={selectedBoard.board}></CardList> : ''}
-        </section>
         </div>
     </div>
   );

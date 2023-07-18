@@ -78,7 +78,8 @@ h2 {
   font-family: 'Concert One', cursive;
   background-color: rgb(255, 248, 165);
   box-shadow: -10px 7px 7px lightgrey;
-  min-height: 200px;
+  min-height: 100px;
+  min-width: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
