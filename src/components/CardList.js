@@ -71,10 +71,10 @@ const CardList = (props) => {
         });
     };
 
-    return (<section>
+    return (<section className='cards_container'>
     <section>
         <h2>Cards for {props.board.title}</h2>
-        <div> 
+        <div className='card-items_container'> 
         {showCards}
         </div>
     </section>

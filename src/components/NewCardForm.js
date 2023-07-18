@@ -23,9 +23,9 @@ const NewCardForm = ({addCard}) => {
         setCardFormData(INITIAL_CARD_FORM_DATA);
     };
     return (
-        <section>
+        <section className="new-card-form_container">
             <h2>Create A New Card</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="new-card-form_form">
             <label htmlFor="message">Message</label>
             <input
                 maxLength={40}
@@ -36,7 +36,7 @@ const NewCardForm = ({addCard}) => {
                 value={cardFormData.message}
                 onChange={handleChange}
             />
-            <input type="submit" value="submit" />
+            <input type="submit" value="submit" className="new-card-form_form-submit-btn" />
             </form>
         </section>
     );

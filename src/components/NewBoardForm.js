@@ -24,7 +24,7 @@ const NewBoardForm = ({addBoard}) => {
         setFormData(INITIAL_FORM_DATA);
     };
     return (
-        <form onSubmit={handleSubmit}>
+        <form className='new-board-form_form' onSubmit={handleSubmit}>
             <label htmlFor="title">Title</label>
             <input
                 required
@@ -43,7 +43,7 @@ const NewBoardForm = ({addBoard}) => {
                 value={formData.owner}
                 onChange={handleChange}
             />
-            <input type="submit" value="submit" />
+            <input type="submit" value="submit" className="new-board-form_form-submit-btn"/>
         </form>
     );
 };

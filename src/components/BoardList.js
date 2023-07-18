@@ -15,8 +15,9 @@ const BoardList = (props) => {
         );
     });
     return (
+
         <div>
-            <h1> Boards</h1>
+            {/* <h1> Boards</h1>  */}
             {boardComponents}
         </div>
     );
