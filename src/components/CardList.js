@@ -29,11 +29,12 @@ const CardList = (props) => {
 
 
     const deleteCard = (card) => {
+        console.log(card)
         axios
             .delete(`https://inspiration-board-pal-backend.onrender.com/cards/${card.id}`)
-            .then((responses) => {
+            .then((response) => {
                 const newCardData = cardData.filter((currentCard) => {
-                    return currentCard.card_id !== card.card_id;
+                    return currentCard.id !== card.id;
                 });
                 setCardData(newCardData);
             })

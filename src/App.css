@@ -15,7 +15,7 @@ h2 {
 
 
 h1 {
-  background-color: yellow;
+  background-color: rgb(149, 206, 250);
   transform: rotate(-5deg) skew(-10deg);
 }
 
