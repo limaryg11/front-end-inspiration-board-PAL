@@ -23,15 +23,10 @@ h1 {
   background-color: white;
   font-size: 80;
   display: grid;
-  /* transform: rotate(-5deg) skew(-10deg); */
-  /* display: flex; */
-  /* align-content: center; */
-  /* text-align: center; */ 
-  
 }
 
 h2 {
-  /* border-bottom: 10px solid lightgrey; */
+
   border: 2px solid black;
   box-shadow: -15px 7px 1px black;
 }
@@ -90,7 +85,6 @@ h2 {
 .card-item {
   font-family: "Homemade Apple", cursive;
   font-family: 'Concert One', cursive;
-  /* background-color: rgb(255, 248, 165); */
   background-color: #c8c5dc;
   box-shadow: -10px 7px 7px lightgrey;
   min-height: 100px;
@@ -130,7 +124,6 @@ input {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  /* background-color: aqua; */
   background-image: url(https://static.vecteezy.com/system/resources/previews/002/812/895/large_2x/beautiful-pink-flower-look-likes-sakura-flower-or-cherry-blossom-with-beautiful-nature-background-spring-flower-tree-blossom-the-romantic-of-pink-flower-trees-for-valentine-or-wedding-background-free-photo.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -144,10 +137,12 @@ input {
 button {
   background-color: #d7d4e4;
 }
-/* .pic {
-  background-image: url(https://static.vecteezy.com/system/resources/previews/005/158/740/large_2x/beautiful-pink-flower-look-likes-sakura-flower-or-cherry-blossom-with-beautiful-nature-background-spring-flower-tree-blossom-the-romantic-of-pink-flower-trees-for-valentine-or-wedding-background-free-photo.jpg);
-  /* background-repeat: no-repeat; */
-  /* background-size: cover;
-  opacity: 0.5;*/ 
+
+.selected_board {
+  margin-top: 60px;
+  font-weight: bold;
+  font-size: large;
+
+}
 
 

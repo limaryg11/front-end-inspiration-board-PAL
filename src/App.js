@@ -75,7 +75,7 @@ function App() {
         </section>
           <section>
             <h2>Selected Boards</h2>
-            <p>{selectedBoard.board.id ? `${selectedBoard.board.title} - ${selectedBoard.board.owner}` : 'Select a Board from the Board List!'}</p>
+            <p className="selected_board">{selectedBoard.board.id ? `${selectedBoard.board.title} - ${selectedBoard.board.owner}` : 'Select a Board from the Board List!'}</p>
           </section>
           <section className='new-board-form_container'>
             <h2>Create A New Board</h2>
