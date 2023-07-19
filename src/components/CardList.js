@@ -72,9 +72,17 @@ const CardList = (props) => {
         });
     };
 
+    const handleSort = () => {
+        const sortCards = [...cardData].sort((a,b)=> {
+            return a.first > b.first ? 1: -1
+        })
+        setCardData(sortCards)
+    }
+
     return (<section className='cards_container'>
     <section>
         <h2>Cards for {props.board.title}</h2>
+        <button onClick={handleSort} id="sort-a-z">Sort A-Z</button>
         <div className='card-items_container'> 
         {showCards}
         </div>
