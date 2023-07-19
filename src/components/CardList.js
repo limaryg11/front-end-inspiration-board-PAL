@@ -91,8 +91,10 @@ const CardList = (props) => {
     return (<section className='cards_container'>
     <section>
         <h2>Cards for {props.board.title}</h2>
-            <button onClick={handleSort} id="sort-a-z">Sort A-Z</button>
+        <div>
+            <button onClick={handleSort} id="sort-a-z">Sort By A-Z</button>
             <button onClick={sortById} >Sort By ID</button>
+        </div>
         <div className='card-items_container'> 
         {showCards}
         </div>
