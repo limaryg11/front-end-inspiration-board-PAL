@@ -74,7 +74,7 @@ const CardList = (props) => {
 
     const handleSort = () => {
         const sortCards = [...cardData].sort((a,b)=> {
-            return a.first > b.first ? 1: -1
+            return a.message > b.message ? 1: -1
         })
         setCardData(sortCards)
     }
