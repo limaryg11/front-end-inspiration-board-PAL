@@ -1,5 +1,6 @@
 * {
   text-align: center;
+  
 }
 
 body {
@@ -19,10 +20,11 @@ h2 {
 
 
 h1 {
-  /* background-color: #e5ebfb; */
-  background-color: white;
-  font-size: 80;
+  background-color: transparent;
+  font-size: 50px;
   display: grid;
+  color: #ee9bd9;
+  -webkit-text-stroke: 1px rgb(26, 136, 253);
 }
 
 h2 {
@@ -68,6 +70,7 @@ h2 {
   padding: 0.5em;
   background-color: white;
   border: 2px solid black;
+  margin-top: 10px;
 }
 
 .cards_container {
@@ -127,6 +130,7 @@ input {
   background-image: url(https://static.vecteezy.com/system/resources/previews/002/812/895/large_2x/beautiful-pink-flower-look-likes-sakura-flower-or-cherry-blossom-with-beautiful-nature-background-spring-flower-tree-blossom-the-romantic-of-pink-flower-trees-for-valentine-or-wedding-background-free-photo.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  margin: -50px;
 
 }
 
@@ -139,9 +143,9 @@ button {
 }
 
 .selected_board {
-  margin-top: 60px;
+  margin-top: 68px;
   font-weight: bold;
-  font-size: large;
+  font-size: larger;
 
 }
 

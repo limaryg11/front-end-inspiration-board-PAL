@@ -66,7 +66,6 @@ function App() {
       <div className='content_container'>
       <h1>Inspiration Board</h1>
       <section className='boards_container'>
-        {/* <h1> Boards</h1> */}
         <section>
           <h2> Boards</h2>
           <section className="boards_list">
