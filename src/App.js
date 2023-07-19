@@ -62,6 +62,7 @@ function App() {
   
   
   return (
+    <div>
     <div className="page_container">
       <div className='content_container'>
       <h1>Inspiration Board</h1>
@@ -83,6 +84,7 @@ function App() {
           </section>{selectedBoard.board.id ? <CardList board={selectedBoard.board}></CardList> : ''}
         </div>
     </div>
+    <footer>&copy; PAL's Inspiration Board 2023</footer></div>
   );
 }
 
